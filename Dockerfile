@@ -8,8 +8,9 @@ RUN sudo apt-key adv --keyserver keyserver.ubuntu.com \
     | sudo tee /etc/apt/sources.list.d/fpco.list \
  && sudo apt-get update \
  && sudo apt-get install stack -y --no-install-recommends \
- && stack setup 7.10.2
-
+ && stack setup 7.10.2 \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 
 CMD ["/usr/bin/fish"]
