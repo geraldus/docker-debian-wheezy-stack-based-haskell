@@ -14,7 +14,8 @@ RUN sudo apt-key adv --keyserver keyserver.ubuntu.com \
  && stack setup $GHC_MAJ.$GHC_MIN \
  && sudo apt-get clean \
  && sudo rm -rf /var/lib/apt/lists/* \
- && sudo rm -rf /tmp/*
+ && sudo rm -rf /tmp/* \
+ && sudo rm -rf /var/tmp/*
 
 RUN stack --version
 RUN stack ghc -- --version
